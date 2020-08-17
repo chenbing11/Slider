@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,, maximum-scale=1.0,user-scalable=no">
+    <title>person</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+  <script type="text/javascript">
+    (function (doc, win) {
+          var _root = doc.documentElement,
+              resizeEvent = 'orientationchange' in window ? 'orientationchange' : 'resize',
+              resizeCallback = function () {
+                  var clientWidth = _root.clientWidth,
+                      fontSize = 20;
+                  if (!clientWidth) return;
+                  if(clientWidth < 750) {
+                      fontSize = 20 * (clientWidth / 375);
+                  } else {
+                      fontSize = 20 * (750 / 375);
+                  }
+                  _root.style.fontSize = fontSize + 'px';
+              };
+          if (!doc.addEventListener) return;
+          win.addEventListener(resizeEvent, resizeCallback, false);
+          doc.addEventListener('DOMContentLoaded', resizeCallback, false);
+      })(document, window);
+     </script>
+</html>
